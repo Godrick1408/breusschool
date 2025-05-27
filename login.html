@@ -1,0 +1,37 @@
+<!-- login.html -->
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Вхід</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header><h1>Вхід</h1></header>
+<nav>
+  <a href="index.html">Головна</a>
+  <a href="schedule.html">Розклад</a>
+  <a href="gallery.html">Галерея</a>
+  <a href="teachers.html">Вчителі</a>
+  <a href="docs.html">Документація</a>
+  <a href="psychology.html">Психологічна служба</a>
+  <a href="medical.html">Медичний кабінет</a>
+  <a href="login.html">Вхід/Реєстрація</a>
+  
+</nav>
+  <main class="container">
+    <form action="login.php" method="POST" class="auth-form">
+      <label>Логін:</label>
+      <input type="text" name="username" required>
+      <label>Пароль:</label>
+      <input type="password" name="password" required>
+      <button type="submit">Увійти</button>
+      <p>Немає акаунта? <a href="register.html">Зареєструватися</a></p>
+    </form>
+  </main>
+  
+<footer>
+  <p>© 2025 Бреусівський ліцей. Усі права захищено.</p>
+</footer>
+</body>
+</html>
