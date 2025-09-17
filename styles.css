@@ -128,7 +128,12 @@ nav.menu-collapsed .menu-items {
 @media (max-width: 768px) {
     nav {
         flex-direction: column;
-        align-items: center;
+        align-items: flex-start;
+        background-color: var(--primary-color);
+    }
+    
+    nav.menu-expanded {
+        background-color: var(--background-white);
     }
 
     nav .menu-toggle {
@@ -138,7 +143,7 @@ nav.menu-collapsed .menu-items {
     }
 
     nav.menu-expanded .menu-items {
-        max-height: 500px; /* Достатня висота для розкритого меню */
+        max-height: 500px;
     }
 
     nav.menu-collapsed {
@@ -151,13 +156,13 @@ nav.menu-collapsed .menu-items {
     }
     
     nav .menu-items a {
-        padding: 10px 0;
+        padding: 15px 10px;
         width: 100%;
         text-align: center;
-        border-top: 1px solid rgba(255, 255, 255, 0.2);
-        color: black;
-        background-color: var(--background-white);
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+        color: var(--text-color);
     }
+    
     nav .menu-items a:hover {
       background-color: var(--hover-color);
       color: var(--background-white);
