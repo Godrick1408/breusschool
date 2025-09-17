@@ -65,10 +65,25 @@ nav a:hover {
 
 .news-item {
   padding: 10px 15px;
-  background-color: #eef5ff;
-  border-left: 4px solid var(--primary-color);
+  background-color: var(--background-white);
+  border-left: none;
   margin-bottom: 10px;
   border-radius: 4px;
+}
+
+.news-item .facebook-container {
+  display: flex;
+  justify-content: center;
+}
+
+.news-item iframe[src*="post.php"] {
+  width: 500px;
+  height: 600px;
+}
+
+.news-item iframe[src*="video.php"] {
+  width: 560px;
+  height: 314px;
 }
 
 footer {
@@ -81,89 +96,79 @@ footer {
 
 /* Стилі для мобільної версії */
 @media (max-width: 768px) {
-    nav {
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: flex-start;
-        background-color: var(--primary-color);
-    }
-    
-    nav .menu-toggle {
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-        width: 100%;
-        height: 50px;
-        background-color: var(--primary-color);
-        cursor: pointer;
-        padding-left: 20px;
-    }
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    background-color: var(--primary-color);
+  }
+  
+  nav .menu-toggle {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    background-color: var(--primary-color);
+    cursor: pointer;
+    padding-left: 20px;
+  }
 
-    .hamburger, .hamburger::before, .hamburger::after {
-        display: block;
-        content: '';
-        width: 25px;
-        height: 3px;
-        background-color: var(--background-white);
-        transition: all 0.3s ease-in-out;
-    }
+  .hamburger, .hamburger::before, .hamburger::after {
+    display: block;
+    content: '';
+    width: 25px;
+    height: 3px;
+    background-color: var(--background-white);
+    transition: all 0.3s ease-in-out;
+  }
 
-    .hamburger::before {
-        transform: translateY(-8px);
-    }
+  .hamburger::before {
+    transform: translateY(-8px);
+  }
 
-    .hamburger::after {
-        transform: translateY(5px);
-    }
+  .hamburger::after {
+    transform: translateY(5px);
+  }
 
-    nav.menu-expanded .hamburger {
-        transform: rotate(45deg);
-        background-color: var(--background-white);
-    }
-    nav.menu-expanded .hamburger::before {
-        opacity: 0;
-    }
-    nav.menu-expanded .hamburger::after {
-        transform: rotate(-90deg) translateX(8px);
-    }
-    
-    nav .menu-items {
-      display: flex;
-      flex-direction: column;
-      width: 100%;
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.3s ease-in-out;
-    }
-    
-    nav.menu-expanded .menu-items {
-      max-height: 500px;
-    }
+  nav.menu-expanded .hamburger {
+    transform: rotate(45deg);
+    background-color: var(--background-white);
+  }
+  nav.menu-expanded .hamburger::before {
+    opacity: 0;
+  }
+  nav.menu-expanded .hamburger::after {
+    transform: rotate(-90deg) translateX(8px);
+  }
+  
+  nav .menu-items {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
+  }
+  
+  nav.menu-expanded .menu-items {
+    max-height: 500px;
+  }
 
-    nav .menu-items a {
-        padding: 15px 20px;
-        width: 100%;
-        text-align: left;
-        border-top: 1px solid rgba(255, 255, 255, 0.2);
-        color: var(--background-white);
-        background-color: var(--primary-color);
-    }
-    
-    nav .menu-items a:hover {
-      background-color: var(--hover-color);
-    }
-    
-    .news-item iframe {
-        max-width: 100%;
-        height: auto;
-    }
-
-    .news-item iframe[src*="video.php"] {
-        height: auto;
-    }
-    
-    /* Додано відступи для мобільних форм */
-    .contact-form form p {
-        margin: 5px 0;
-    }
+  nav .menu-items a {
+    padding: 15px 20px;
+    width: 100%;
+    text-align: left;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    color: var(--background-white);
+    background-color: var(--primary-color);
+  }
+  
+  nav .menu-items a:hover {
+    background-color: var(--hover-color);
+  }
+  
+  .news-item iframe {
+    max-width: 100%;
+  }
 }
