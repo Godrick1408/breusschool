@@ -36,6 +36,9 @@ nav {
   justify-content: center;
   flex-wrap: wrap;
   box-shadow: var(--box-shadow);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 nav a {
