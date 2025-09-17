@@ -76,9 +76,10 @@
       display: block;
       margin-left: auto;
       margin-right: auto;
-      /* Стилі для комп'ютерної версії */
+    }
+    
+    .news-item iframe[src*="post.php"] {
       width: 500px;
-      height: 600px; /* Автоматична висота для дописів */
     }
 
     .news-item iframe[src*="video.php"] {
@@ -101,6 +102,9 @@
       }
       .news-item iframe {
         max-width: 100%;
+        height: auto;
+      }
+      .news-item iframe[src*="video.php"] {
         height: auto;
       }
     }
