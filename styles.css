@@ -97,11 +97,26 @@ footer {
 /* Стилі для згортання/розгортання меню */
 nav .menu-toggle {
     display: none;
-    color: white;
-    font-weight: bold;
     cursor: pointer;
     padding: 15px 20px;
     height: 100%;
+}
+
+.hamburger, .hamburger::before, .hamburger::after {
+    display: block;
+    content: '';
+    width: 25px;
+    height: 3px;
+    background-color: var(--background-white);
+    transition: all 0.3s ease-in-out;
+}
+
+.hamburger::before {
+    transform: translateY(-8px);
+}
+
+.hamburger::after {
+    transform: translateY(5px);
 }
 
 nav.menu-collapsed .menu-items {
@@ -109,15 +124,11 @@ nav.menu-collapsed .menu-items {
     overflow: hidden;
 }
 
-nav.menu-collapsed {
-    height: 50px;
-}
-
 /* Стилі для мобільної версії */
 @media (max-width: 768px) {
     nav {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
     }
 
     nav .menu-toggle {
@@ -140,8 +151,16 @@ nav.menu-collapsed {
     }
     
     nav .menu-items a {
-        padding-left: 0;
-        padding-right: 0;
+        padding: 10px 0;
+        width: 100%;
+        text-align: center;
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+        color: black;
+        background-color: var(--background-white);
+    }
+    nav .menu-items a:hover {
+      background-color: var(--hover-color);
+      color: var(--background-white);
     }
     
     .news-item iframe {
