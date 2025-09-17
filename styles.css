@@ -101,11 +101,16 @@ nav .menu-toggle {
     font-weight: bold;
     cursor: pointer;
     padding: 15px 20px;
+    height: 100%;
 }
 
 nav.menu-collapsed .menu-items {
     max-height: 0;
     overflow: hidden;
+}
+
+nav.menu-collapsed {
+    height: 50px;
 }
 
 /* Стилі для мобільної версії */
@@ -128,7 +133,17 @@ nav.menu-collapsed .menu-items {
     nav.menu-collapsed {
         height: auto;
     }
-
+    nav .menu-items {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+    }
+    
+    nav .menu-items a {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    
     .news-item iframe {
         max-width: 100%;
         height: auto;
