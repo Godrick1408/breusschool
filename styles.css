@@ -98,17 +98,18 @@ footer {
 @media (max-width: 768px) {
     nav {
         flex-direction: column;
-        align-items: center;
+        align-items: flex-start; /* Вирівнюємо меню по лівому краю */
     }
     
     nav .menu-toggle {
         display: flex;
-        justify-content: center;
+        justify-content: flex-start; /* Вирівнюємо іконку по лівому краю */
         align-items: center;
         width: 100%;
         height: 50px;
         background-color: var(--primary-color);
         cursor: pointer;
+        padding-left: 20px; /* Додаємо відступ зліва */
     }
 
     .hamburger, .hamburger::before, .hamburger::after {
@@ -154,9 +155,9 @@ footer {
     }
 
     nav .menu-items a {
-        padding: 15px 10px;
+        padding: 15px 20px; /* Відкоригував відступи */
         width: 100%;
-        text-align: center;
+        text-align: left; /* Вирівнюємо текст по лівому краю */
         border-top: 1px solid rgba(255, 255, 255, 0.2);
         color: var(--background-white);
         background-color: var(--primary-color);
