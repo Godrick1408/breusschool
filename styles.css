@@ -67,6 +67,21 @@ nav a:hover {
   border-radius: 4px;
 }
 
+.news-item .facebook-container {
+  display: flex;
+  justify-content: center;
+}
+
+.news-item iframe[src*="post.php"] {
+  width: 500px;
+  height: 600px; /* Автоматична висота для дописів */
+}
+
+.news-item iframe[src*="video.php"] {
+  width: 560px;
+  height: 314px;
+}
+
 footer {
   background-color: var(--secondary-color);
   color: var(--background-white);
@@ -94,5 +109,14 @@ footer {
 
   header h1 {
     font-size: 1.5em;
+  }
+  
+  .news-item iframe {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .news-item iframe[src*="video.php"] {
+    height: auto;
   }
 }
