@@ -39,6 +39,7 @@ nav {
   position: sticky;
   top: 0;
   z-index: 1000;
+  transition: all 0.3s ease-in-out;
 }
 
 nav a {
@@ -93,33 +94,47 @@ footer {
   margin-top: 20px;
 }
 
-/* Мобільна адаптація */
+/* Стилі для згортання/розгортання меню */
+nav .menu-toggle {
+    display: none;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 15px 20px;
+}
+
+nav.menu-collapsed .menu-items {
+    max-height: 0;
+    overflow: hidden;
+}
+
+/* Стилі для мобільної версії */
 @media (max-width: 768px) {
-  nav {
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  nav a {
-    width: 100%;
-    text-align: center;
-  }
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
 
-  .container {
-    margin: 10px;
-    padding: 15px;
-  }
+    nav .menu-toggle {
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
 
-  header h1 {
-    font-size: 1.5em;
-  }
-  
-  .news-item iframe {
-    max-width: 100%;
-    height: auto;
-  }
-  
-  .news-item iframe[src*="video.php"] {
-    height: auto;
-  }
+    nav.menu-expanded .menu-items {
+        max-height: 500px; /* Достатня висота для розкритого меню */
+    }
+
+    nav.menu-collapsed {
+        height: auto;
+    }
+
+    .news-item iframe {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .news-item iframe[src*="video.php"] {
+        height: auto;
+    }
 }
