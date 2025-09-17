@@ -61,8 +61,8 @@ nav a:hover {
 
 .news-item {
   padding: 10px 15px;
-  background-color: #eef5ff;
-  border-left: 4px solid var(--primary-color);
+  background-color: var(--background-white);
+  border-left: none;
   margin-bottom: 10px;
   border-radius: 4px;
 }
