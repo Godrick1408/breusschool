@@ -20,5 +20,4 @@ document.addEventListener('DOMContentLoaded', () => {
         mainNav.classList.remove('menu-expanded');
       }
     });
-
 });

@@ -13,7 +13,7 @@
 body {
   font-family: 'Roboto', sans-serif;
   margin: 0;
-  background-color: var(--background-white);
+  background-color: var(--background-light);
   color: var(--text-color);
   line-height: 1.6;
 }
@@ -65,25 +65,10 @@ nav a:hover {
 
 .news-item {
   padding: 10px 15px;
-  background-color: var(--background-white);
-  border-left: none;
+  background-color: #eef5ff;
+  border-left: 4px solid var(--primary-color);
   margin-bottom: 10px;
   border-radius: 4px;
-}
-
-.news-item .facebook-container {
-  display: flex;
-  justify-content: center;
-}
-
-.news-item iframe[src*="post.php"] {
-  width: 500px;
-  height: 600px; /* Автоматична висота для дописів */
-}
-
-.news-item iframe[src*="video.php"] {
-  width: 560px;
-  height: 314px;
 }
 
 footer {
@@ -98,19 +83,20 @@ footer {
 @media (max-width: 768px) {
     nav {
         flex-direction: column;
-        align-items: flex-start; /* Вирівнюємо меню по лівому краю */
-        justify-content: flex-start; /* Вирівнюємо контент по лівому краю */
+        align-items: flex-start;
+        justify-content: flex-start;
+        background-color: var(--primary-color);
     }
     
     nav .menu-toggle {
         display: flex;
-        justify-content: flex-start; /* Вирівнюємо іконку по лівому краю */
+        justify-content: flex-start;
         align-items: center;
         width: 100%;
         height: 50px;
         background-color: var(--primary-color);
         cursor: pointer;
-        padding-left: 20px; /* Додаємо відступ зліва */
+        padding-left: 20px;
     }
 
     .hamburger, .hamburger::before, .hamburger::after {
@@ -148,7 +134,6 @@ footer {
       max-height: 0;
       overflow: hidden;
       transition: max-height 0.3s ease-in-out;
-      background-color: var(--primary-color);
     }
     
     nav.menu-expanded .menu-items {
@@ -156,9 +141,9 @@ footer {
     }
 
     nav .menu-items a {
-        padding: 15px 20px; /* Відкоригував відступи */
+        padding: 15px 20px;
         width: 100%;
-        text-align: left; /* Вирівнюємо текст по лівому краю */
+        text-align: left;
         border-top: 1px solid rgba(255, 255, 255, 0.2);
         color: var(--background-white);
         background-color: var(--primary-color);
@@ -175,5 +160,10 @@ footer {
 
     .news-item iframe[src*="video.php"] {
         height: auto;
+    }
+    
+    /* Додано відступи для мобільних форм */
+    .contact-form form p {
+        margin: 5px 0;
     }
 }
