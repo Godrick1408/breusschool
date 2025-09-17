@@ -72,19 +72,37 @@
       text-align: left;
     }
     
-    .news-item iframe {
-      display: block;
+    .news-item .facebook-container {
+      position: relative;
+      overflow: hidden;
+      margin-left: auto;
+      margin-right: auto;
+      /* Стилі для комп'ютерної версії */
+      width: 500px;
+    }
+    
+    .news-item .facebook-container iframe {
+      position: relative;
+      width: 100%;
+      height: 600px; /* Фіксована висота для комп'ютерної версії */
+      border: none;
+    }
+
+    .news-item .video-container {
+      position: relative;
+      width: 560px;
+      height: 314px;
       margin-left: auto;
       margin-right: auto;
     }
-    
-    .news-item iframe[src*="post.php"] {
-      width: 500px;
-    }
 
-    .news-item iframe[src*="video.php"] {
-      width: 560px;
-      height: 314px;
+    .news-item .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
     }
 
     footer {
@@ -100,12 +118,13 @@
       .news-item p {
         text-align: center;
       }
-      .news-item iframe {
-        max-width: 100%;
-        height: auto;
+      .news-item .facebook-container,
+      .news-item .video-container {
+        width: 100%;
       }
-      .news-item iframe[src*="video.php"] {
-        height: auto;
+      .news-item .facebook-container iframe,
+      .news-item .video-container iframe {
+        height: 600px; /* Збільшення висоти для мобільних пристроїв */
       }
     }
   </style>
@@ -136,19 +155,29 @@
     <p>📸 Дивіться фотозвіт зі святкування останнього дзвоника.</p>
   </div>
   <div class="news-item">
-    <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid0K5cWLu5z3uJ4XT8sq6SYBiWcYjayhHk6ksFEgA8uP4Bro916y4Zqs8us91ZcguPil%26id%3D100045248515858&show_text=true&width=500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+    <div class="facebook-container">
+      <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid0K5cWLu5z3uJ4XT8sq6SYBiWcYjayhHk6ksFEgA8uP4Bro916y4Zqs8us91ZcguPil%26id%3D100045248515858&show_text=true&width=500" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+    </div>
   </div>
   <div class="news-item">
-    <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid0dm5y9Zp4QQdP5qCwHNLVJugoweiPu9SNpnvs7Zb8sEv6Bbqo8UKLFFCpAYqLkwG9l%26id%3D100045248515858&show_text=true&width=500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+    <div class="facebook-container">
+      <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid0dm5y9Zp4QQdP5qCwHNLVJugoweiPu9SNpnvs7Zb8sEv6Bbqo8UKLFFCpAYqLkwG9l%26id%3D100045248515858&show_text=true&width=500" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+    </div>
   </div>
   <div class="news-item">
-    <iframe src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2F100045248515858%2Fvideos%2F784696304382714%2F&show_text=false&width=560" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
+    <div class="video-container">
+      <iframe src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2F100045248515858%2Fvideos%2F784696304382714%2F&show_text=false&width=560" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
+    </div>
   </div>
   <div class="news-item">
-    <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid0D6DV5SuzkAUyjfSzrAh746JLGL3QRTk9gvm9ebHJ5Fcnb9PuFBCG2njpozLBLwvHl%26id%3D100045248515858&show_text=true&width=500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+    <div class="facebook-container">
+      <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid0D6DV5SuzkAUyjfSzrAh746JLGL3QRTk9gvm9ebHJ5Fcnb9PuFBCG2njpozLBLwvHl%26id%3D100045248515858&show_text=true&width=500" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+    </div>
   </div>
   <div class="news-item">
-    <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid0RD6JopPVjX3j2TBaVs4BzrCqRXnPLws8nZbonAQsBc8QGM9wZ2bjswx75AyyF84Xl%26id%3D100045248515858&show_text=true&width=500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+    <div class="facebook-container">
+      <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid0RD6JopPVjX3j2TBaVs4BzrCqRXnPLws8nZbonAQsBc8QGM9wZ2bjswx75AyyF84Xl%26id%3D100045248515858&show_text=true&width=500" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+    </div>
   </div>
 
   <h2>Про нашу школу</h2>
