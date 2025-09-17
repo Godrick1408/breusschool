@@ -99,6 +99,7 @@ footer {
     nav {
         flex-direction: column;
         align-items: flex-start; /* Вирівнюємо меню по лівому краю */
+        justify-content: flex-start; /* Вирівнюємо контент по лівому краю */
     }
     
     nav .menu-toggle {
