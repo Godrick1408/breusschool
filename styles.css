@@ -124,10 +124,8 @@ footer {
   background-color: var(--hover-color);
 }
 
-@media (min-width: 769px) {
-  .dropdown:hover .dropdown-content {
-    display: block;
-  }
+.dropdown:hover .dropdown-content {
+  display: block;
 }
 
 /* Стилі для мобільної версії */
