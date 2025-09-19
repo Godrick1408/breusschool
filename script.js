@@ -28,6 +28,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const link = dropdown.querySelector('a');
 
         link.addEventListener('click', (e) => {
+            // Зупиняємо "спливання" кліку
+            e.stopPropagation();
+
             // Запобігаємо переходу за посиланням тільки на мобільних пристроях
             if (window.innerWidth <= 768) {
                 const isAlreadyActive = dropdown.classList.contains('active');
@@ -44,5 +47,17 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             }
         });
+    });
+    
+    // Додаємо обробник кліків на весь документ, щоб закривати меню, якщо клік був поза ним
+    document.addEventListener('click', (e) => {
+        if (window.innerWidth <= 768) {
+            const isClickInsideMenu = mainNav.contains(e.target);
+            if (!isClickInsideMenu) {
+                dropdowns.forEach(dropdown => {
+                    dropdown.classList.remove('active');
+                });
+            }
+        }
     });
 });
