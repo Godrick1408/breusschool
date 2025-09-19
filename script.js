@@ -30,20 +30,17 @@ document.addEventListener('DOMContentLoaded', () => {
         link.addEventListener('click', (e) => {
             // Запобігаємо переходу за посиланням тільки на мобільних пристроях
             if (window.innerWidth <= 768) {
-                e.preventDefault(); 
+                const isAlreadyActive = dropdown.classList.contains('active');
+
+                // Закриваємо всі відкриті підменю
+                dropdowns.forEach(otherDropdown => {
+                    otherDropdown.classList.remove('active');
+                });
                 
-                // Перевіряємо, чи є підменю у цьому пункті
-                const dropdownContent = dropdown.querySelector('.dropdown-content');
-                if (dropdownContent) {
-                     // Закриваємо всі інші відкриті підменю, якщо вони існують
-                     dropdowns.forEach(otherDropdown => {
-                         if (otherDropdown !== dropdown) {
-                             otherDropdown.classList.remove('active');
-                         }
-                     });
-                     
-                     // Перемикаємо 'active' клас на поточному елементі
-                     dropdown.classList.toggle('active');
+                // Якщо меню не було активним, відкриваємо його
+                if (!isAlreadyActive) {
+                    e.preventDefault(); 
+                    dropdown.classList.add('active');
                 }
             }
         });
