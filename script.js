@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (window.innerWidth <= 768) {
                 e.preventDefault(); 
                 
-                // Перемикаємо клас 'active' для поточного підменю
+                // Перевіряємо, чи є підменю у цьому пункті
                 const dropdownContent = dropdown.querySelector('.dropdown-content');
                 if (dropdownContent) {
                      // Закриваємо всі інші відкриті підменю, якщо вони існують
