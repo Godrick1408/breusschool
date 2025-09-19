@@ -208,16 +208,17 @@ footer {
 
   /* Правила для випадаючого меню на мобільному */
   .dropdown {
-    display: flex; /* Змінюємо, щоб підменю було в одному рядку з батьківським посиланням */
+    display: flex;
     flex-direction: column;
     width: 100%;
   }
   
   .dropdown-content {
     display: none;
-    position: static; /* Це основне виправлення */
+    position: static; 
     box-shadow: none;
-    padding-left: 20px; /* Відступ для кращої візуальної ієрархії */
+    padding-left: 20px; 
+    border-top: 1px solid rgba(255, 255, 255, 0.2); /* Додаємо, щоб підменю було схожим на інші пункти */
   }
 
   /* Показати підменю, коли 'active' клас додано */
