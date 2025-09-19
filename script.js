@@ -22,24 +22,27 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Обробка випадаючих меню (для мобільного)
-    const dropdownLinks = mainNav.querySelectorAll('.dropdown > a');
+    const dropdowns = mainNav.querySelectorAll('.dropdown');
 
-    dropdownLinks.forEach(link => {
+    dropdowns.forEach(dropdown => {
+        const link = dropdown.querySelector('a');
+
         link.addEventListener('click', (e) => {
+            // Запобігаємо переходу за посиланням
             e.preventDefault(); 
             
-            const parentDropdown = link.parentElement;
-            
-            // Закриваємо всі інші відкриті підменю, якщо вони існують
-            dropdownLinks.forEach(otherLink => {
-                const otherDropdown = otherLink.parentElement;
-                if (otherDropdown !== parentDropdown) {
+            // Якщо поточне меню вже відкрито, закриваємо його
+            if (dropdown.classList.contains('active')) {
+                dropdown.classList.remove('active');
+            } else {
+                // Закриваємо всі інші відкриті меню перед відкриттям поточного
+                dropdowns.forEach(otherDropdown => {
                     otherDropdown.classList.remove('active');
-                }
-            });
-            
-            // Перемикаємо клас 'active' на поточному елементі
-            parentDropdown.classList.toggle('active');
+                });
+                
+                // Відкриваємо поточне меню
+                dropdown.classList.add('active');
+            }
         });
     });
 });
