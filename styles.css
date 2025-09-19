@@ -205,4 +205,10 @@ footer {
   .news-item iframe {
     max-width: 100%;
   }
+
+  /* Стиль для активного випадаючого меню на мобільній версії */
+  .dropdown.active .dropdown-content {
+    display: block;
+    position: static;
+  }
 }

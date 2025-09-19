@@ -20,4 +20,18 @@ document.addEventListener('DOMContentLoaded', () => {
         mainNav.classList.remove('menu-expanded');
       }
     });
+
+    // Обробка випадаючих меню (для мобільного)
+    const dropdownLinks = mainNav.querySelectorAll('.dropdown > a');
+
+    dropdownLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            // Запобігаємо переходу за посиланням
+            e.preventDefault(); 
+            
+            // Знаходимо батьківський елемент і перемикаємо клас
+            const dropdown = link.parentElement;
+            dropdown.classList.toggle('active');
+        });
+    });
 });
