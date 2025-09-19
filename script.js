@@ -32,10 +32,17 @@ document.addEventListener('DOMContentLoaded', () => {
             if (window.innerWidth <= 768) {
                 e.preventDefault(); 
                 
-                // Перевіряємо, чи є підменю у цьому пункті
+                // Перемикаємо клас 'active' для поточного підменю
                 const dropdownContent = dropdown.querySelector('.dropdown-content');
                 if (dropdownContent) {
-                     // Перемикаємо клас 'active' для відкриття/закриття
+                     // Закриваємо всі інші відкриті підменю, якщо вони існують
+                     dropdowns.forEach(otherDropdown => {
+                         if (otherDropdown !== dropdown) {
+                             otherDropdown.classList.remove('active');
+                         }
+                     });
+                     
+                     // Перемикаємо 'active' клас на поточному елементі
                      dropdown.classList.toggle('active');
                 }
             }
