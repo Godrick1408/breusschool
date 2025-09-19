@@ -26,12 +26,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
     dropdownLinks.forEach(link => {
         link.addEventListener('click', (e) => {
-            // Запобігаємо переходу за посиланням
             e.preventDefault(); 
             
-            // Знаходимо батьківський елемент і перемикаємо клас
-            const dropdown = link.parentElement;
-            dropdown.classList.toggle('active');
+            const parentDropdown = link.parentElement;
+            
+            // Закриваємо всі інші відкриті підменю, якщо вони існують
+            dropdownLinks.forEach(otherLink => {
+                const otherDropdown = otherLink.parentElement;
+                if (otherDropdown !== parentDropdown) {
+                    otherDropdown.classList.remove('active');
+                }
+            });
+            
+            // Перемикаємо клас 'active' на поточному елементі
+            parentDropdown.classList.toggle('active');
         });
     });
 });
