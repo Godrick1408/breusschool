@@ -28,20 +28,15 @@ document.addEventListener('DOMContentLoaded', () => {
         const link = dropdown.querySelector('a');
 
         link.addEventListener('click', (e) => {
-            // Запобігаємо переходу за посиланням
-            e.preventDefault(); 
-            
-            // Якщо поточне меню вже відкрито, закриваємо його
-            if (dropdown.classList.contains('active')) {
-                dropdown.classList.remove('active');
-            } else {
-                // Закриваємо всі інші відкриті меню перед відкриттям поточного
-                dropdowns.forEach(otherDropdown => {
-                    otherDropdown.classList.remove('active');
-                });
+            // Запобігаємо переходу за посиланням тільки на мобільних пристроях
+            if (window.innerWidth <= 768) {
+                e.preventDefault(); 
                 
-                // Відкриваємо поточне меню
-                dropdown.classList.add('active');
+                // Перевіряємо, чи є підменю у цьому пункті
+                const dropdownContent = dropdown.querySelector('.dropdown-content');
+                if (dropdownContent) {
+                     dropdown.classList.toggle('active');
+                }
             }
         });
     });
