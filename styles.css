@@ -124,8 +124,6 @@ footer {
   background-color: var(--hover-color);
 }
 
-/* Показувати підменю по hover лише на десктопі (щоб уникнути конфліктів на мобільних: iOS/Android
-   можуть симулювати :hover на дотик і тоді JS перестає коректно працювати) */
 @media (min-width: 769px) {
   .dropdown:hover .dropdown-content {
     display: block;
@@ -222,16 +220,11 @@ footer {
     position: static; 
     box-shadow: none;
     padding-left: 20px; 
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    border-top: 1px solid rgba(255, 255, 255, 0.2); /* Додаємо, щоб підменю було схожим на інші пункти */
   }
 
   /* Показати підменю, коли 'active' клас додано */
   .dropdown.active .dropdown-content {
     display: block;
-  }
-
-  /* Вказати, що заголовки підменю клікабельні */
-  .dropdown > a {
-    cursor: pointer;
   }
 }
