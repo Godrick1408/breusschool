@@ -176,14 +176,20 @@ footer {
     transform: rotate(-90deg) translateX(8px);
   }
   
-  nav .menu-items {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    max-height: 0;
+nav .menu-items {
+  display: grid;
+  grid-template-rows: 0fr;
+  overflow: hidden;
+  transition: grid-template-rows 0.3s ease-in-out;
+}
+
+nav.menu-expanded .menu-items {
+  grid-template-rows: 1fr;
+}
+
+nav .menu-items > * {
     overflow: hidden;
-    transition: max-height 0.3s ease-in-out;
-  }
+}
   
   nav.menu-expanded .menu-items {
     max-height: 500px;
@@ -211,4 +217,5 @@ footer {
     display: block;
     position: static;
   }
+
 }
