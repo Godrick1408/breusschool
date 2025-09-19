@@ -35,6 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 // Перевіряємо, чи є підменю у цьому пункті
                 const dropdownContent = dropdown.querySelector('.dropdown-content');
                 if (dropdownContent) {
+                     // Перемикаємо клас 'active' для відкриття/закриття
                      dropdown.classList.toggle('active');
                 }
             }
