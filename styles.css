@@ -103,11 +103,11 @@ footer {
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: var(--primary-color); 
-  min-width: 100%; 
+  background-color: var(--primary-color);
+  min-width: 100%;
   box-shadow: var(--box-shadow);
   z-index: 1;
-  top: 100%; 
+  top: 100%;
   left: 0;
 }
 
@@ -206,18 +206,21 @@ footer {
     max-width: 100%;
   }
 
-  /* Виправлення для випадаючого меню в мобільній версії */
-  .dropdown .dropdown-content {
-    /* Робимо підменю частиною потоку, а не випадаючим блоком */
-    position: static;
-    /* Приховуємо за замовчуванням */
+  /* Правила для випадаючого меню на мобільному */
+  .dropdown {
+    display: flex; /* Змінюємо, щоб підменю було в одному рядку з батьківським посиланням */
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .dropdown-content {
     display: none;
-    /* Прибираємо тінь, щоб не було зайвої візуальної "ваги" */
+    position: static; /* Це основне виправлення */
     box-shadow: none;
-    /* Додаємо невеликий відступ для візуального відділення */
-    padding-left: 20px;
+    padding-left: 20px; /* Відступ для кращої візуальної ієрархії */
   }
 
+  /* Показати підменю, коли 'active' клас додано */
   .dropdown.active .dropdown-content {
     display: block;
   }
